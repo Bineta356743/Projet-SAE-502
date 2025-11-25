@@ -1,0 +1,7 @@
+---
+- name: Créer le dossier des sauvegardes
+  file:
+    path: /data/backups
+    state: directory
+    mode: '0755'
+

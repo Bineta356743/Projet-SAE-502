@@ -1,0 +1,25 @@
+---
+- name: Créer le dossier source
+  file:
+    path: /data/source
+    state: directory
+    mode: '0755'
+
+- name: Créer le dossier log si nécessaire
+  file:
+    path: /var/log
+    state: directory
+
+- name: Copier le script de sauvegarde
+  copy:
+    src: run_backup.sh
+    dest: /usr/local/bin/run_backup.sh
+    mode: '0755'
+
+- name: Créer la tâche cron
+  cron:
+    name: "sauvegarde automatique"
+    user: root
+    job: "/usr/local/bin/run_backup.sh"
+    minute: "*/2"
+

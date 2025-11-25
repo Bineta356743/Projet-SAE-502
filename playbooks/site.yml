@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+  roles:
+    - common
+
+- hosts: backup_server
+  become: yes
+  roles:
+    - backup_server
+
+- hosts: backup_client
+  become: yes
+  roles:
+    - client_backup

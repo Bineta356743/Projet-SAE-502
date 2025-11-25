@@ -1,0 +1,21 @@
+---
+- name: Mise à jour APT
+  apt:
+    update_cache: yes
+
+- name: Installer outils essentiels
+  apt:
+    name:
+      - rsync
+      - openssh-server
+      - cron
+    state: present
+
+- name: Démarrer SSH via init.d
+  command: /etc/init.d/ssh start
+  ignore_errors: yes
+
+- name: Démarrer cron via init.d
+  command: /etc/init.d/cron start
+  ignore_errors: yes
+
