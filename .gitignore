@@ -1,29 +1,25 @@
-# Fichiers Ansible
+# --- Ansible ---
 *.retry
+
+# --- Vault ---
+.vault_pass
+vault_pass.txt
+
+# --- SSH keys ---
+**/.ssh/*
+id_rsa
+id_rsa.pub
+*.pem
+*.key
+
+# --- Logs ---
 *.log
-.secret
-.vault_pass
+logs/
+client_logs/
+server_logs/
 
-# Dossiers Ansible internes
-__pycache__/
-.cache/
-*.pyc
+# --- Backup folders (NE PAS METTRE SUR GITHUB) ---
+data/
+backups/
+tmp/
 
-# Fichiers système
-.DS_Store
-Thumbs.db
-
-# Éditeurs
-*.swp
-*.swo
-.vscode/
-.idea/
-
-# Logs et backups
-backup.log
-*.bak
-*.tmp
-
-# Docker
-*.pid
-.vault_pass
