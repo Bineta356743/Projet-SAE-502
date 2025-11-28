@@ -1,0 +1,28 @@
+# Fichiers Ansible
+*.retry
+*.log
+.secret
+.vault_pass
+
+# Dossiers Ansible internes
+__pycache__/
+.cache/
+*.pyc
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Éditeurs
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Logs et backups
+backup.log
+*.bak
+*.tmp
+
+# Docker
+*.pid
