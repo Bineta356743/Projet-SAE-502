@@ -131,21 +131,14 @@ Un `.gitignore` a aussi été ajouté pour éviter d’envoyer des fichiers sens
 
 ## Tests réalisés
 
-- Test de connexion SSH entre les machines : OK 
-- Test rsync du client vers le serveur : OK 
-- Test du script et du cron : OK 
-- Vérification des dossiers créés automatiquement : OK 
-- Test de restauration : OK 
+- Test de connexion SSH entre les machines :  
+- Test rsync du client vers le serveur :  
+- Test du script et du cron : 
+- Vérification des dossiers créés automatiquement : 
+- Test de restauration :  
 - Le playbook peut être relancé sans casser la configuration (idempotent)
 
 ---
-
-## Améliorations possibles
-
-- Utiliser BorgBackup pour des sauvegardes plus avancées
-- Ajouter une notification après chaque sauvegarde
-- Mettre en place un tableau de supervision
-- Ajouter la rotation des sauvegardes
 
 ---
 
