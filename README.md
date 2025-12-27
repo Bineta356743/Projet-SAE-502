@@ -26,8 +26,24 @@ Les objectifs principaux du projet étaient :
 
 ---
 
+### Multi-clients
+- Plusieurs clients peuvent être ajoutés simplement dans l’inventaire Ansible
+- Chaque client est sauvegardé vers le serveur central
+- Le système est extensible à de nouveaux postes
+---
+### Sécurité
+- Connexions SSH sans mot de passe
+- Clés SSH déployées automatiquement
+- Utilisation d’**Ansible Vault** pour protéger les secrets
+- Les fichiers sensibles ne sont pas versionnés sur GitHub
+---
+### Supervision web
+- Interface web légère (Apache + HTML)
+- Affichage de l’état actuel des sauvegardes par client
+- Vue claire et lisible (OK uniquement)
+- Logs stockés côté serveur
 ## Architecture du projet
-
+---
 Voici comment l’infrastructure est organisée :
 
 Ansible Controller → Backup Client → Backup Server
@@ -41,6 +57,7 @@ Ansible Controller → Backup Client → Backup Server
 - Vue claire et lisible (OK uniquement)
 - Logs stockés côté serveur
 ---
+
 
 ## Structure du dépôt
 
