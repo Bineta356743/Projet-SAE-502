@@ -36,23 +36,27 @@ Ansible Controller → Backup Client → Backup Server
 - Le client envoie ses fichiers vers le serveur via rsync.
 - Le serveur stocke les sauvegardes dans un dossier dédié.
 
+
+- Affichage de l’état actuel des sauvegardes par client
+- Vue claire et lisible (OK uniquement)
+- Logs stockés côté serveur
 ---
 
 ## Structure du dépôt
 
 
-projet_sae5.02/
 ├── ansible.cfg
 ├── inventory.ini
-├── secrets.yml # chiffré avec Ansible Vault
 ├── playbooks/
 │ └── site.yml
-└── roles/
-├── common/
-├── backup_server/
-└── client_backup/
-
-
+├── roles/
+│ ├── common/
+│ ├── backup_server/
+│ └── client_backup/
+├── supervision/
+│ ├── index.html
+│ └── generate_dashboard.sh
+└── README.md
 ### Rôle *common*  
 Installe les paquets nécessaires, active SSH et cron, crée le dossier `.ssh`, et déploie les clés à partir du fichier Vault.
 
