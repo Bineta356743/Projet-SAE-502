@@ -19,3 +19,27 @@
   command: /etc/init.d/cron start
   ignore_errors: yes
 
+- name: Créer le dossier .ssh si nécessaire
+  file:
+    path: /root/.ssh
+    state: directory
+    mode: '0700'
+
+- name: Déployer la clé SSH privée du controller (via Vault)
+  copy:
+    content: "{{ vault_ssh_private_key }}"
+    dest: /root/.ssh/id_rsa
+    mode: '0600'
+
+- name: Déployer la clé SSH publique du controller
+  copy:
+    content: "{{ vault_ssh_public_key }}"
+    dest: /root/.ssh/id_rsa.pub
+    mode: '0644'
+
+- name: Ajouter la clé publique dans authorized_keys
+  lineinfile:
+    path: /root/.ssh/authorized_keys
+    line: "{{ vault_ssh_public_key }}"
+    create: yes
+    mode: '0600'
